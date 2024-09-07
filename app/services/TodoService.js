@@ -5,6 +5,23 @@ import { api } from "./AxiosService.js";
 
 
 class TodoService {
+async  completeTodo(todoId) {
+   const todos = AppState.todos
+
+   const todoIndex = todos.findIndex(todo => todo.id == todoId)
+   const todo = todos[todoIndex]
+   const todoData = {completed: !todo.completed}
+   const response = await api.put(`api/todos/${todoId}`, todoData)
+   console.log('updated to do item', response.data)
+    
+   const updatedTodo = new Todo(response.data)
+   todos.splice(todoIndex, 1, updatedTodo)
+
+
+  }
+
+
+
   async createTodo(todoData) {
     const response = await api.post('api/todos', todoData)
     console.log('created a todo!', response.data)

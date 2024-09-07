@@ -4,7 +4,7 @@ import { AppState } from "../AppState.js"
 export class Todo {
   constructor(data) {
     this.id = data.id
-    this.completed = data.completed
+    this.completed = data.completed || false
     this.description = data.description
     this.creatorId = data.creatorId
   }
@@ -16,7 +16,7 @@ export class Todo {
 // Needs ID for todo list item to delete
   get todoListHTMLTemplate() {
     return /*html*/`
-     <input onclick="app.TodoController.completeTodo()" type="checkbox" id="" name="" value="">
+     <input onchange="app.TodoController.completeTodo('${this.id}')" type="checkbox" ${this.completed ? 'checked' : ''}>
           <label for="">${this.description}</label><br>
           <button onclick="app.TodoController.deleteTodos()" type="button" class="btn btn-danger">Delete</button>
           <hr>
