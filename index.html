@@ -40,79 +40,88 @@
 
   <!-- SECTION -->
   <main class="container-fluid align-items-center">
-    <section class="row justify-content-center">
-      <div id="hero-picture" class="col-12 col-md-6">
+    <!-- <section class="row justify-content-center"> -->
+    <div id="hero-picture" class="col-12 col-md-6">
 
         <!-- STUB start of picture and temperature and time template -->
         <!-- <div class="container-fluid">
           <img src="https:placehold.it/500x500" alt="">
         </div> -->
       </div>
-    </section>
-
-
-    <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+      
+      
+      <button class="btn btn-outline-light bg-black" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight">To Do List</button>
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-        <!-- STUB todo form template -->
-        <form id="todo-form" onsubmit="app.TodoController.createTodo()" action="">
-          Create To Do!
-          <input type="text" placeholder="To Do...." required>
-          <button type="submit" class="rounded-pill btn btn-outline-dark">Create!</button>
-          <p id="total-todos"># of To Do's to Complete</p>
-        </form>
-
-
-        <!-- STUB todo list template -->
-        <div id="todo-list" class="">
-          <input type="checkbox" id="" name="" value="">
-          <label for="vehicle1">To Do 1</label><br>
+      
+      
+      
+      <!-- #REGION start of offcanvas and todo list template stubbed out -->
+      <div class="offcanvas offcanvas-end text-bg-dark " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+          <button type="button" class=" btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <!-- End to do list template -->
-
-
-
-      </div>
-    </div>
-
-
-    <section class="row align-items-end">
-      <div class="container-fluid  d-flex  align-items-end">
-        <!-- START of temperature and time template  -->
-        <div class="card col-md-2">
-          <h4>Temperature</h4>
-          <h4>Time </h4>
-
-        </div>
-
-
-
-
-
-
-        <!-- STUB for temparature, time etc card-->
-        <div id="hero-info" class="container-fluid d-flex">
-          <!-- <div class="d-flex  align-items-end">
-          <div class=" col-12 col-md-8 hero-info-card card">
-            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum nisi sapiente, voluptates incidunt enim
-              eligendi!
-              Quote Area
-            </h2>
-            <h3>Author's Name Area</h3>
-            <time datetime="">2000-01-01</time>
-            <p>98* F</p>
+        <div class="offcanvas-body">
+          
+          <!-- STUB todo form template -->
+          <form id="todo-form" name="description" onsubmit="app.TodoController.createTodo()" action="">
+            Create To Do!
+            <input type="text" name="description" placeholder="To Do...." required>
+            <button type="submit" class="rounded-pill btn btn-outline-dark">Create!</button>
+            <p id="total-todos"># of To Do's to Complete</p>
+          </form>
+          
+          
+          <!-- STUB todo list template -->
+          <div id="todo-list" class="">
+            <!-- <input type="checkbox" id="" name="" value="">
+            <label for="">To Do 1</label><br>
+            <hr> -->
           </div>
-        </div> -->
+          
+          
+          
         </div>
-    </section>
+      </div>
+      
+      <!-- #END region of off canvas -->
+      
 
+
+
+      <section class="row align-items-end">
+        <div class="container-fluid  d-flex  align-items-end">
+          <!-- START of temperature and time template  -->
+          <div class="card col-md-2">
+            <div id="temperature">
+              <h4>Temperature</h4>
+            </div>
+              <h4>Time </h4>
+            
+          </div>
+          
+          
+          
+          
+          
+          
+          <!-- STUB for temparature, time etc card-->
+          <div id="hero-info" class="container-fluid d-flex">
+            <!-- <div class="d-flex  align-items-end">
+              <div class=" col-12 col-md-8 hero-info-card card">
+                <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum nisi sapiente, voluptates incidunt enim
+                  eligendi!
+                  Quote Area
+                </h2>
+                <h3>Author's Name Area</h3>
+                <time datetime="">2000-01-01</time>
+                <p>98* F</p>
+              </div>
+            </div> -->
+          </div>
+        <!-- </section> -->
+        
+      </section>
 
 
     </div>

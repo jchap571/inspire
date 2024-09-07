@@ -13,11 +13,13 @@ export class Todo {
 
 
 
-
+// Needs ID for todo list item to delete
   get todoListHTMLTemplate() {
-    return `
-     <input type="checkbox" id="" name="" value="">
-          <label for="vehicle1">To Do 1</label><br>
+    return /*html*/`
+     <input onclick="app.TodoController.completeTodo()" type="checkbox" id="" name="" value="">
+          <label for="">${this.description}</label><br>
+          <button onclick="app.TodoController.deleteTodos()" type="button" class="btn btn-danger">Delete</button>
+          <hr>
     `
   }
 }

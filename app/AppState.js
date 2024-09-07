@@ -21,6 +21,8 @@ class ObservableAppState extends EventEmitter {
   /**@type {Todo[]} */
   todos = []
 
+  todo = null
+
 
   weather = null
 }

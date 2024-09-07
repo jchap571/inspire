@@ -15,8 +15,10 @@ export class Weather {
 
   get weatherHTMLTemplate() {
     return `
-    
+    <h4>Temperature</h4>
     `
+    
+            
 
   }
 

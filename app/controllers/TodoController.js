@@ -12,6 +12,8 @@ export class TodoController {
     console.log('todo controller is loaded')
 
     AppState.on('user', this.getTodos)
+    AppState.on('todos', this.drawTodos)
+    AppState.on('todos', this.countTodos)
   }
 
 
@@ -35,26 +37,61 @@ export class TodoController {
       const todoFormData = getFormData(todoFormElem)
       console.log(todoFormData, todoFormElem)
 
-      //   await todoService.createTodo(todoFormData)
-
-
-      //   Pop.toast('you created a new todo!')
+      await todoService.createTodo(todoFormData)
+      this.drawTodos()
+      // @ts-ignore
+      todoFormElem.reset()
+      Pop.toast('you created a new todo!')
     } catch (error) {
-      //   Pop.error(error)
-      //   console.error(error)
+      Pop.error(error)
+      console.error(error)
     }
   }
 
 
-
+// NOTE may not need a for loop for this
   countTodos() {
-    for (let i = 0; i < Todo.length; i++) {
+    for (let i = 0; i < AppState.todos.length; i++) {
       let total = AppState.todos.length
-      console.log('# of todos is,' + total)
+      
+      console.log('# of todos is ' + total)
       const totalToDoElem = document.getElementById('total-todos')
-      totalToDoElem.innerText = `# of To Do's is: ` + total.toString()
-
+      totalToDoElem.innerText = `# of To Do's is: ` + total
+      
     }
   }
+      
+
+
+
+  drawTodos(){
+    console.log('drawing todos ✏️🗒️!')
+    const todo = AppState.todos
+    let todoHTML = ''
+    todo.forEach(todo  => todoHTML += todo.todoListHTMLTemplate)
+    setHTML('todo-list', todoHTML)
+    
+  }
+
+
+
+  async deleteTodos(todoId){
+    try{
+    const wantsToDelete = await Pop.confirm("Are you sure you want to delete?")
+
+    if (!wantsToDelete) return
+    await todoService.deleteTodos(todoId)
+
+
+  }catch(error) {
+    Pop.error(error)
+    console.error(error)
+  }
+ }
+
+  
+
+
+
 
 }
