@@ -10,6 +10,7 @@ export class WeatherController {
   constructor() {
     console.log('weather controller is loaded!')
     this.getWeather()
+    this.drawWeather()
 
 
 
@@ -23,6 +24,8 @@ export class WeatherController {
   async getWeather() {
     try {
       await weatherService.getWeather()
+      
+      console.log()
     } catch (error) {
       Pop.error(error)
       console.error(error)
@@ -31,8 +34,10 @@ export class WeatherController {
 
 
   drawWeather(){
-    const weather = AppState.weather
-    setHTML('temperature', weather.main.weatherHTMLTemplate)
+    const weather = AppState.weather.main
+    let weatherHTML = ''
+    
+    setHTML('temperature', weather.weatherHTMLTemplate)
   }
 
 

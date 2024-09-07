@@ -10,6 +10,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
     integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>inspire</title>
@@ -49,16 +52,18 @@
         </div> -->
       </div>
       
-      
-      <button class="btn btn-outline-light bg-black" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+      <!-- STUB to do list button -->
+
+    <div class="d-flex"></div>
+      <button class="btn btn-outline text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight">To Do List</button>
-      
+    </div>
       
       
       <!-- #REGION start of offcanvas and todo list template stubbed out -->
       <div class="offcanvas offcanvas-end text-bg-dark " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+          <h5 id="offcanvasRightLabel"></h5>
           <button type="button" class=" btn btn-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -72,7 +77,7 @@
           </form>
           
           
-          <!-- STUB todo list template -->
+      <!-- STUB todo list template -->
           <div id="todo-list" class="">
             <!-- <input type="checkbox" id="" name="" value="">
             <label for="">To Do 1</label><br>
@@ -83,21 +88,22 @@
           
         </div>
       </div>
-      
       <!-- #END region of off canvas -->
       
+      
 
 
 
-      <section class="row align-items-end">
-        <div class="container-fluid  d-flex  align-items-end">
+      <section class="row">
+        <div class="container-fluid  d-flex align-items-end">
           <!-- START of temperature and time template  -->
-          <div class="card col-md-2">
-            <div id="temperature">
-              <h4>Temperature</h4>
+          <div class="card col-md-2 bg-secondary mb-3 opacity-75 space-around">
+            <div id="temperature" class="text-center">
+              <h4><span class="mdi mdi-sun-clock-outline"></span>98*</h4>
             </div>
-              <h4>Time </h4>
-            
+            <div class="text-center">
+              <h4>12:00 </h4>
+            </div>
           </div>
           
           
@@ -106,7 +112,7 @@
           
           
           <!-- STUB for temparature, time etc card-->
-          <div id="hero-info" class="container-fluid d-flex">
+          <div id="hero-info" class="container-fluid d-flex mb-3 magic-text">
             <!-- <div class="d-flex  align-items-end">
               <div class=" col-12 col-md-8 hero-info-card card">
                 <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum nisi sapiente, voluptates incidunt enim
@@ -124,7 +130,7 @@
       </section>
 
 
-    </div>
+  
 
 
 

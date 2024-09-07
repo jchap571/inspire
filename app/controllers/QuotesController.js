@@ -24,8 +24,6 @@ export class QuotesController {
 
   drawQuote() {
     const quote = AppState.quote
-    // document.getElementById("hero-info")
-
     setHTML('hero-info', quote.quotesHTMLTemplate)
 
   }
