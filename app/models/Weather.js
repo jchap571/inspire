@@ -3,9 +3,9 @@ import { AppState } from "../AppState.js";
 
 export class Weather {
   constructor(data) {
-    this.name = data.name
-    this.main = data.name
-    this.weather = data.weather
+    this.name = data.name;
+    this.main = data.main.temp;
+    this.weather = data.weather;
 
 
 
@@ -26,10 +26,9 @@ export class Weather {
 }
 
 
-//   "coord": {
-//       "lon": -116.2035,
-//       "lat": 43.6135
-//   },
+// const data:  "coord": {
+
+    
 //   "weather": {
 //       "0": {
 //           "id": 800,
@@ -74,19 +73,19 @@ export class Weather {
 // }
 
 
-// {
-//   "name": {
-//     "type": "String"
-//   },
-//   "main": {
-//     "temp": {
-//       "type": "Number"
-//     }
-//   },
-//   "weather": [
-//     {
-//       "description": {
-//         "type": "String"
-//       }
-//     }
-//   ]
+// // {
+// //   "name": {
+// //     "type": "String"
+// //   },
+// //   "main": {
+// //     "temp": {
+// //       "type": "Number"
+// //     }
+// //   },
+// //   "weather": [
+// //     {
+// //       "description": {
+// //         "type": "String"
+// //       }
+// //     }
+// //   ]

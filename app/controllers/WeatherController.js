@@ -9,10 +9,11 @@ import { Weather } from "../models/Weather.js";
 export class WeatherController {
   constructor() {
     console.log('weather controller is loaded!')
-    this.getWeather()
+    
+    
+    AppState.on('weather', this.getWeather)
+    
     this.drawWeather()
-
-
 
 
 
@@ -34,10 +35,24 @@ export class WeatherController {
 
 
   drawWeather(){
-    const weather = AppState.weather.main
-    let weatherHTML = ''
+   
+  
+    const weather = AppState.weather.main.temp
+      
+    
+   
+    
     
     setHTML('temperature', weather.weatherHTMLTemplate)
+    console.log('drawing weather')
+  }
+
+  drawTime(){
+    const newDate = new Date().toLocaleTimeString()
+    const timeElem = document.getElementById('time-area')
+
+    timeElem.innerText = newDate
+
   }
 
 

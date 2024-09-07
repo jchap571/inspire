@@ -8,7 +8,12 @@ class WeatherService {
     console.log('got the weather', response.data)
 
     const newWeather = new Weather(response.data)
+    AppState.weather = newWeather
   }
+
+
+
+
 }
 
 
