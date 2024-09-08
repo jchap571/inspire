@@ -4,23 +4,38 @@ import { AppState } from "../AppState.js";
 export class Weather {
   constructor(data) {
     this.name = data.name;
-    this.main = data.main.temp;
+    this.temp = data.main.temp;
     this.weather = data.weather;
+    this.dateTime = data.dt
+    this.formattedDT = new Date(this.dateTime * 1000).toLocaleTimeString()
 
+    
 
+    
 
   }
+
+ 
 
 
 
   get weatherHTMLTemplate() {
     return `
-    <h4>${this.main}</h4>
+    
+    <h4>${this.temp}</h4>
     `
     
             
 
   }
+
+
+
+  get timeHTMLTemplate(){
+    return `
+    <p>${this.formattedDT}</p>
+    `
+}    
 
 
 }

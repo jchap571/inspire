@@ -54,7 +54,7 @@ export class TodoController {
     for (let i = 0; i < AppState.todos.length; i++) {
       let total = AppState.todos.length
       
-      console.log('# of todos is ' + total)
+      // console.log('# of todos is ' + total)
       const totalToDoElem = document.getElementById('total-todos')
       totalToDoElem.innerText = `# of To Do's is: ` + total
       
@@ -77,11 +77,12 @@ export class TodoController {
 
   async deleteTodos(todoId){
     try{
+    console.log('deleting todo')
     const wantsToDelete = await Pop.confirm("Are you sure you want to delete?")
-
+ 
     if (!wantsToDelete) return
     await todoService.deleteTodos(todoId)
-
+    
 
   }catch(error) {
     Pop.error(error)

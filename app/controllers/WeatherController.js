@@ -2,7 +2,7 @@ import { AppState } from "../AppState.js";
 import { weatherService } from "../services/WeatherService.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
-import { Weather } from "../models/Weather.js";
+
 
 
 
@@ -11,16 +11,15 @@ export class WeatherController {
     console.log('weather controller is loaded!')
     
     
-    AppState.on('weather', this.getWeather)
+    AppState.on('weather', this.drawWeather)
+    this.getWeather()
     
-    this.drawWeather()
-
+    
 
 
 
 
   }
-
 
   async getWeather() {
     try {
@@ -33,27 +32,26 @@ export class WeatherController {
     }
   }
 
-
   drawWeather(){
-   
   
-    const weather = AppState.weather.main.temp
+
+  
+    const weather = AppState.weather
       
     
-   
-    
-    
+    console.log(weather)
+    // setHTML('time-area', time.timeHTMLTemplate)
     setHTML('temperature', weather.weatherHTMLTemplate)
     console.log('drawing weather')
   }
 
-  drawTime(){
-    const newDate = new Date().toLocaleTimeString()
-    const timeElem = document.getElementById('time-area')
 
-    timeElem.innerText = newDate
+ 
 
-  }
+
+    
+
+
 
 
 

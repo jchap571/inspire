@@ -4,6 +4,7 @@ import { Picture } from "./models/Picture.js"
 import { Quote } from "./models/Quotes.js"
 import { Todo } from "./models/Todo.js"
 import { Weather } from "./models/Weather.js"
+// import { Time } from './models/Time.js'
 
 class ObservableAppState extends EventEmitter {
 
@@ -24,7 +25,11 @@ class ObservableAppState extends EventEmitter {
   todo = null
 
  /**@type {Weather} */
- weather = null
+  weather = null
+
+  //  /**@type {Time} */
+  // time = null
+
 
 }
    
