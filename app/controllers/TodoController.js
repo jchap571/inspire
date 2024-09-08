@@ -49,17 +49,20 @@ export class TodoController {
   }
 
 
-// NOTE may not need a for loop for this
-  countTodos() {
-    for (let i = 0; i < AppState.todos.length; i++) {
-      let total = AppState.todos.length
-      
-      // console.log('# of todos is ' + total)
-      const totalToDoElem = document.getElementById('total-todos')
-      totalToDoElem.innerText = `# of To Do's is: ` + total
-      
-    }
+
+countTodos() {
+  let incompleteCount = 0;
+
+  for (let i = 0; i < AppState.todos.length; i++) {
+      if (!AppState.todos[i].completed) {
+          incompleteCount++;
+      }
   }
+
+  // Display the count of uncompleted TODOs
+  const totalToDoElem = document.getElementById('total-todos');
+  totalToDoElem.innerText = `# of To Do's is: ${incompleteCount}`;
+}
       
 
 
