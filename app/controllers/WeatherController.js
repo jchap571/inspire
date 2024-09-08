@@ -13,9 +13,9 @@ export class WeatherController {
     
     AppState.on('weather', this.drawWeather)
     this.getWeather()
-    // this.convertKelvin()
-    this.getTime()
-    this.drawTime()
+    
+    
+  
   }
     
     
@@ -57,34 +57,17 @@ export class WeatherController {
   }
 
 
-async getTime(){
-  try {
-    await weatherService.getTime()
-    console.log('got the time')
-  } catch (error) {
-    Pop.error(error)
-    console.log(error)
-  }
 
 
-}
-  drawTime(){
-    
-    const time = AppState.weather
-    const newTime = time.formattedDT
-    const timeElem = document.getElementById('time-area')
-    timeElem.innerText = newTime
-    
-    // setHTML('time-area', newTime.timeHTMLTemplate)
-  }
-
-
-    
-
-  
-
-
-
+ 
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 

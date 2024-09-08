@@ -105,7 +105,7 @@
               <span id="hrs">00</span>
               <span>:</span>
               <span id="min">00</span>
-              <span></span>
+              <span>:</span>
               <span id="sec"></span>
               <span id="amOrPm"></span>
             </div>
@@ -150,49 +150,33 @@
 let hrs = document.getElementById('hrs')
 let min = document.getElementById('min')
 let sec = document.getElementById('sec')
-let amPm = document.getElementById('amOrPm')
+let amOrPm = document.getElementById('amOrPm')
+let amPm = (hrs < 12) ? "AM" : "PM"
+
 let currentTime = new Date().toLocaleTimeString
-console.log(getAMorPM(), amOrPm)
+console.log(amPm)
 
-function getAMorPM(){
-  let amOrPm = 'AM'
-  if (hrs >= 12) {
-    amOrPm = 'PM'
-  }
+normalHrs = (hrs > 12) ? hrs - 12 : hrs;
 
-  return amOrPm
-  setHTML('amOrPm', )
-}
-
-if (hrs > 12) {
-  hrs = hrs - 12
-}
-
-
-if (min < 10) {
-  min = `"0" + min`
-  
-}
-
-if (sec < 10) {
-  sec = `"0" + sec`
-  
-}
   
 
 
 
 setInterval(()=>{
   let currentTime = new Date()
-  hrs.innerHTML = currentTime.getHours()
+  normalHrs.innerHTML = currentTime.getHours()
   min.innerHTML = currentTime.getMinutes()
   sec.innerHTML = currentTime.getSeconds()
-  
-
+  amOrPm.innerHTML = amPm
 })
 
 
+
 </script>
+
+
+
+
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -15,10 +15,10 @@ class WeatherService {
 
   }
 
-  async getTime(){
-    const time = await api.get('api/weather')
-    const newTime = AppState.weather.formattedDT
-  }
+  // async getTime(){
+  //   const time = await api.get('api/weather')
+  //   const newTime = AppState.weather.formattedDT
+  // }
 
 
 

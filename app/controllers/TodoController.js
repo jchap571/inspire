@@ -96,6 +96,7 @@ countTodos() {
  async completeTodo(todoId){
   try {
     await todoService.completeTodo(todoId)
+    
   } catch (error) {
     Pop.error(error)
     console.error(error)

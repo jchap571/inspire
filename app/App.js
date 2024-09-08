@@ -4,7 +4,7 @@ import { PictureController } from "./controllers/PictureController.js";
 import { TodoController } from "./controllers/ToDoController.js";
 import { QuotesController } from "./controllers/QuotesController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
-// import { TimeController } from './controllers/TimeController.js';
+
 
 
 
@@ -17,7 +17,7 @@ class App {
   TodoController = new TodoController()
   QuotesController = new QuotesController()
   WeatherController = new WeatherController()
-  // TimeController = new TimeController()
+  
 
 
 
