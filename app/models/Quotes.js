@@ -16,9 +16,9 @@ export class Quote {
     return `
   <div class="magic-text d-flex">
     <div class="d-flex justify-content-center align-items-end w-100">
-      <div class=" col-12 col-md-8 justify-content-center opacity-25">
-          <div class="text-center d-flex"
-            <p>"${this.quote}"</p>
+      <div class=" col-12 col-md-8 justify-content-center">
+          <div class="text-center justify-content-center"
+            <h2>"${this.quote}"</h2>
           </div>  
           <div class="text-end secret-text "
             <p class="text-end">-${this.author}</p>

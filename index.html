@@ -54,8 +54,8 @@
       
       <!-- STUB to do list button -->
 
-    <div class="d-flex"></div>
-      <button class="btn btn-outline text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    <div class="d-flex mt-2"></div>
+      <button class="btn btn-outline-dark text-light bg-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight">To Do List</button>
     </div>
       
@@ -70,9 +70,9 @@
           
           <!-- STUB todo form template -->
           <form id="todo-form" name="description" onsubmit="app.TodoController.createTodo()" action="">
-            Create To Do!
+            Create A To Do!
             <input type="text" name="description" placeholder="To Do...." required>
-            <button type="submit" class="rounded-pill btn btn-outline-dark">Create!</button>
+            <button type="submit" class="rounded-pill btn btn-outline-light">Create!</button>
             <p id="total-todos"># of To Do's to Complete</p>
           </form>
           
@@ -99,10 +99,15 @@
           <!-- START of temperature and time template  -->
           <div class="card col-md-2 bg-secondary mb-3 opacity-75 space-around">
             <div class="text-center">
-              <h4 id="temperature" ><span class="mdi mdi-sun-clock-outline"></span></h4>
+              <h4 id="temperature" ><span class="mdi mdi-sun-clock-outline bg-dark"></span></h4>
             </div>
-            <div class="text-center">
-              <h4 id="time-area">12:00 </h4>
+            <div id="time-area" class="text-center clock">
+              <span id="hrs">00</span>
+              <span>:</span>
+              <span id="min">00</span>
+              <span></span>
+              <span id="sec"></span>
+              <span id="amOrPm"></span>
             </div>
           </div>
           
@@ -111,21 +116,11 @@
           
           
           
-          <!-- STUB for temparature, time etc card-->
-          <div id="hero-info" class="container-fluid d-flex mb-3 magic-text">
-            <!-- <div class="d-flex  align-items-end">
-              <div class=" col-12 col-md-8 hero-info-card card">
-                <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum nisi sapiente, voluptates incidunt enim
-                  eligendi!
-                  Quote Area
-                </h2>
-                <h3>Author's Name Area</h3>
-                <time datetime="">2000-01-01</time>
-                <p>98* F</p>
-              </div>
-            </div> -->
+          <!-- STUB for quote and author card-->
+          <div id="hero-info" class="container-fluid  magic-text align-items-center justify-content-center">
+          
           </div>
-        <!-- </section> -->
+        
         
       </section>
 
@@ -150,7 +145,54 @@
 
 
 
+<script>
 
+let hrs = document.getElementById('hrs')
+let min = document.getElementById('min')
+let sec = document.getElementById('sec')
+let amPm = document.getElementById('amOrPm')
+let currentTime = new Date().toLocaleTimeString
+console.log(getAMorPM(), amOrPm)
+
+function getAMorPM(){
+  let amOrPm = 'AM'
+  if (hrs >= 12) {
+    amOrPm = 'PM'
+  }
+
+  return amOrPm
+  setHTML('amOrPm', )
+}
+
+if (hrs > 12) {
+  hrs = hrs - 12
+}
+
+
+if (min < 10) {
+  min = `"0" + min`
+  
+}
+
+if (sec < 10) {
+  sec = `"0" + sec`
+  
+}
+  
+
+
+
+setInterval(()=>{
+  let currentTime = new Date()
+  hrs.innerHTML = currentTime.getHours()
+  min.innerHTML = currentTime.getMinutes()
+  sec.innerHTML = currentTime.getSeconds()
+  
+
+})
+
+
+</script>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

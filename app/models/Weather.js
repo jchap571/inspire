@@ -20,9 +20,10 @@ export class Weather {
 
 
   get weatherHTMLTemplate() {
-    return `
-    
-    <h4>${this.temp}</h4>
+    return /*html*/`
+    <button class="fs-6" >Toggle</button>
+    <span class="mdi mdi-sun-clock-outline"></span>
+    <h4>${this.temp}&deg</h4>
     `
     
             

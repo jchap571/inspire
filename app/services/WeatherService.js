@@ -9,9 +9,15 @@ class WeatherService {
     console.log('got the weather', response.data)
     
     const newWeather = new Weather(response.data)
-    AppState.weather = newWeather
-    const newFWeather = newWeather
+    AppState.weather  = newWeather
+    
+    
 
+  }
+
+  async getTime(){
+    const time = await api.get('api/weather')
+    const newTime = AppState.weather.formattedDT
   }
 
 
