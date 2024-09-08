@@ -43,14 +43,12 @@ async  completeTodo(todoId) {
 
 
  async deleteTodos(todoId){
-    const todos = AppState.todos
-    
-    const todoIndex = todos.findIndex(todo => todo.id == todoId)
-    todos.splice(todoIndex, 1)
     const response = await api.delete(`api/todos/${todoId}`)
-    console.log(response)
-    AppState.todos = todos
-    this.getTodos()
+    console.log('deleted todo!', response.data)
+
+    const todoIndex = AppState.todos.findIndex(todo => todo.id == todoId)
+    AppState.todos.splice(todoIndex, 1)
+
   }
  
 

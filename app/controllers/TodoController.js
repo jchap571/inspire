@@ -79,9 +79,9 @@ export class TodoController {
     try{
     console.log('deleting todo')
     const wantsToDelete = await Pop.confirm("Are you sure you want to delete?")
+    await todoService.deleteTodos(todoId)
  
     if (!wantsToDelete) return
-    await todoService.deleteTodos(todoId)
     
 
   }catch(error) {

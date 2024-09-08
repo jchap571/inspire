@@ -10,6 +10,8 @@ class WeatherService {
     
     const newWeather = new Weather(response.data)
     AppState.weather = newWeather
+    const newFWeather = newWeather
+
   }
 
 
