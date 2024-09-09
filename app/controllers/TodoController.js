@@ -50,60 +50,60 @@ export class TodoController {
 
 
 
-countTodos() {
-  let incompleteCount = 0;
+  countTodos() {
+    let incompleteCount = 0;
 
-  for (let i = 0; i < AppState.todos.length; i++) {
+    for (let i = 0; i < AppState.todos.length; i++) {
       if (!AppState.todos[i].completed) {
-          incompleteCount++;
+        incompleteCount++;
       }
+    }
+
+
+    const totalToDoElem = document.getElementById('total-todos');
+    totalToDoElem.innerText = `# of To Do's is: ${incompleteCount}`;
   }
 
-  
-  const totalToDoElem = document.getElementById('total-todos');
-  totalToDoElem.innerText = `# of To Do's is: ${incompleteCount}`;
-}
-      
 
 
 
-  drawTodos(){
+  drawTodos() {
     console.log('drawing todos ✏️🗒️!')
     const todo = AppState.todos
     let todoHTML = ''
-    todo.forEach(todo  => todoHTML += todo.todoListHTMLTemplate)
+    todo.forEach(todo => todoHTML += todo.todoListHTMLTemplate)
     setHTML('todo-list', todoHTML)
-    
+
   }
 
 
 
-  async deleteTodos(todoId){
-    try{
-    console.log('deleting todo')
-    const wantsToDelete = await Pop.confirm("Are you sure you want to delete?")
-    await todoService.deleteTodos(todoId)
- 
-    if (!wantsToDelete) return
-    
-  }catch(error) {
-    Pop.error(error)
-    console.error(error)
+  async deleteTodos(todoId) {
+    try {
+      console.log('deleting todo')
+      const wantsToDelete = await Pop.confirm("Are you sure you want to delete?")
+      if (!wantsToDelete) return
+      await todoService.deleteTodos(todoId)
+
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
   }
- }
 
 
- async completeTodo(todoId){
-  try {
-    await todoService.completeTodo(todoId)
-    
-  } catch (error) {
-    Pop.error(error)
-    console.error(error)
+  async completeTodo(todoId) {
+    try {
+      await todoService.completeTodo(todoId)
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
   }
- }
 
-  
+
 
 
 
