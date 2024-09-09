@@ -102,12 +102,12 @@
               <h4 id="temperature" ><span class="mdi mdi-sun-clock-outline bg-dark"></span></h4>
             </div>
             <div id="time-area" class="text-center clock">
-              <span id="hrs">00</span>
-              <span>:</span>
+              <span id="hrs"></span>
+              <!-- <span>:</span>
               <span id="min">00</span>
               <span>:</span>
               <span id="sec"></span>
-              <span id="amOrPm"></span>
+              <span id="amOrPm"></span> -->
             </div>
           </div>
           
@@ -147,30 +147,36 @@
 
 <script>
 
+
+
+
+  
+
+
+
+function setClock(){
 let hrs = document.getElementById('hrs')
 let min = document.getElementById('min')
 let sec = document.getElementById('sec')
 let amOrPm = document.getElementById('amOrPm')
 let amPm = (hrs < 12) ? "AM" : "PM"
 
-let currentTime = new Date().toLocaleTimeString
-console.log(amPm)
+
+
 
 normalHrs = (hrs > 12) ? hrs - 12 : hrs;
 
-  
 
+  let currentTime = new Date().toLocaleTimeString()
+  normalHrs.innerHTML = currentTime
+  // normalHrs.innerHTML = currentTime.getHours()
+  // min.innerHTML = currentTime.getMinutes()
+  // sec.innerHTML = currentTime.getSeconds()
+  // amOrPm.innerHTML = amPm
+  console.log(setClock)
+}
 
-
-setInterval(()=>{
-  let currentTime = new Date()
-  normalHrs.innerHTML = currentTime.getHours()
-  min.innerHTML = currentTime.getMinutes()
-  sec.innerHTML = currentTime.getSeconds()
-  amOrPm.innerHTML = amPm
-})
-
-
+const intervalId = setInterval(setClock, 1000)
 
 </script>
 

@@ -59,7 +59,7 @@ countTodos() {
       }
   }
 
-  // Display the count of uncompleted TODOs
+  
   const totalToDoElem = document.getElementById('total-todos');
   totalToDoElem.innerText = `# of To Do's is: ${incompleteCount}`;
 }
@@ -86,12 +86,12 @@ countTodos() {
  
     if (!wantsToDelete) return
     
-
   }catch(error) {
     Pop.error(error)
     console.error(error)
   }
  }
+
 
  async completeTodo(todoId){
   try {

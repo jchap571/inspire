@@ -4,26 +4,29 @@ import { AppState } from "../AppState.js";
 export class Weather {
   constructor(data) {
     this.name = data.name;
-    this.temp = data.main.temp;
+    this.temp = (data.main.temp - 273.15)
     this.weather = data.weather;
     this.dateTime = data.dt
     this.formattedDT = new Date(this.dateTime * 1000).toLocaleTimeString()
-
+    this.tempFormat = 'c'
     
 
     
 
   }
-
+  
+  
  
 
 
 
   get weatherHTMLTemplate() {
+    console.log(typeof(this.temp))
+    let roundedNum = parseFloat(this.temp).toFixed(2)
     return /*html*/`
-    <button class="fs-6" >Toggle</button>
+    <button onclick="app.WeatherController.toggleDegrees()" class="fs-6" >Toggle</button>
     <span class="mdi mdi-sun-clock-outline"></span>
-    <h4>${this.temp}&deg</h4>
+    <h4>${roundedNum}&deg${this.tempFormat}</h4>
     `
     
             

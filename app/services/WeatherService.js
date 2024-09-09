@@ -15,11 +15,28 @@ class WeatherService {
 
   }
 
-  // async getTime(){
-  //   const time = await api.get('api/weather')
-  //   const newTime = AppState.weather.formattedDT
-  // }
+async  toggleDegrees(){
+    const temp = AppState.weather.temp
+    const format = AppState.weather.tempFormat
+    let newTemp = 0
+    let newFormat = ''
 
+    if (format == "c") {
+     newTemp = ((parseFloat(temp) *9/5) +32)
+     newFormat = "f"
+      
+      
+    }
+    else{
+     newTemp = ((parseFloat(temp))-32) * 5/9
+     newFormat = 'c'
+
+    }
+
+    AppState.weather.temp = newTemp.toString()
+    AppState.weather.tempFormat = newFormat
+  
+  
 
 
 
@@ -27,7 +44,7 @@ class WeatherService {
 
 
 
-
+}
 
 
 

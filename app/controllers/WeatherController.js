@@ -30,18 +30,26 @@ export class WeatherController {
     }
   }
 
-  convertKelvin(){
-    const temperatureInKelvin = AppState.weather.temp
 
-    const temperatureInCelsius = temperatureInKelvin - 273.15
-    const temperatureInFahrenheit = (temperatureInCelsius *9/5) + 32
-    console.log(temperatureInCelsius)
-    return{
-      temperatureInCelsius,
-      temperatureInFahrenheit
+  
+
+async toggleDegrees(){
+    try {
+      await weatherService.toggleDegrees()
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
       
     }
+
+    
+  
+  
+
+
+
   }
+  
 
 
 
